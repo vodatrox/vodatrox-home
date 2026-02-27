@@ -20,6 +20,12 @@
   <link rel="shortcut icon" href="images/red2_4x.ico">
   <link rel="apple-touch-icon" href="images/red2_4x.ico">
 
+  <!-- Mobile browser chrome -->
+  <meta name="theme-color" content="#080808">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1298,55 +1304,64 @@
 (function() {
   'use strict';
 
+  var isMobile = window.innerWidth <= 768;
+  var isTouch  = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
   /* ---- Preloader ---- */
   window.addEventListener('load', function() {
     setTimeout(function() {
       document.getElementById('preloader').classList.add('hidden');
-    }, 800);
+    }, isMobile ? 600 : 800);
   });
 
   /* ---- Nav scroll ---- */
-  var header = document.getElementById('vdx-header');
+  var header    = document.getElementById('vdx-header');
   var scrollTop = document.getElementById('scrollTop');
 
   function onScroll() {
     var y = window.scrollY;
-    if (y > 60) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-    if (y > 400) {
-      scrollTop.classList.add('visible');
-    } else {
-      scrollTop.classList.remove('visible');
-    }
+    header.classList.toggle('scrolled', y > 60);
+    scrollTop.classList.toggle('visible', y > 300);
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
   /* ---- Hamburger / Mobile drawer ---- */
-  var hamburger  = document.getElementById('hamburger');
-  var drawer     = document.getElementById('mobileDrawer');
+  var hamburger   = document.getElementById('hamburger');
+  var drawer      = document.getElementById('mobileDrawer');
   var drawerLinks = drawer.querySelectorAll('a');
 
   function toggleMenu(open) {
     hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', open);
+    hamburger.setAttribute('aria-expanded', String(open));
     drawer.classList.toggle('open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   }
 
-  hamburger.addEventListener('click', function() {
-    var isOpen = drawer.classList.contains('open');
-    toggleMenu(!isOpen);
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    toggleMenu(!drawer.classList.contains('open'));
   });
 
   drawerLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function() { toggleMenu(false); });
+  });
+
+  /* Close drawer when tapping outside it */
+  document.addEventListener('click', function(e) {
+    if (drawer.classList.contains('open') &&
+        !drawer.contains(e.target) &&
+        !hamburger.contains(e.target)) {
       toggleMenu(false);
-    });
+    }
+  });
+
+  /* Close drawer on Escape key */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      toggleMenu(false);
+    }
   });
 
   /* ---- Scroll to top ---- */
@@ -1355,20 +1370,17 @@
   });
 
   /* ---- Active nav link on scroll ---- */
-  var sections = document.querySelectorAll('section[id], div[id]');
+  var sections = document.querySelectorAll('section[id]');
   var navLinks = document.querySelectorAll('.nav-links a');
 
   function updateActiveLink() {
-    var scrollPos = window.scrollY + 100;
+    var scrollPos = window.scrollY + header.offsetHeight + 20;
     sections.forEach(function(section) {
-      var top    = section.offsetTop;
-      var bottom = top + section.offsetHeight;
-      if (scrollPos >= top && scrollPos < bottom) {
+      if (scrollPos >= section.offsetTop &&
+          scrollPos < section.offsetTop + section.offsetHeight) {
         navLinks.forEach(function(link) {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + section.id) {
-            link.classList.add('active');
-          }
+          link.classList.toggle('active',
+            link.getAttribute('href') === '#' + section.id);
         });
       }
     });
@@ -1380,6 +1392,10 @@
   var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
   if ('IntersectionObserver' in window) {
+    /* Lower threshold on mobile so items trigger earlier (less scroll needed) */
+    var threshold   = isMobile ? 0.06 : 0.12;
+    var rootMargin  = isMobile ? '0px 0px -20px 0px' : '0px 0px -40px 0px';
+
     var revealObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -1387,37 +1403,33 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: threshold, rootMargin: rootMargin });
 
-    revealEls.forEach(function(el) {
-      revealObserver.observe(el);
-    });
+    revealEls.forEach(function(el) { revealObserver.observe(el); });
   } else {
-    // Fallback for older browsers
-    revealEls.forEach(function(el) {
-      el.classList.add('visible');
-    });
+    revealEls.forEach(function(el) { el.classList.add('visible'); });
   }
 
   /* ---- Portfolio filter ---- */
-  var filterBtns = document.querySelectorAll('.filter-btn');
+  var filterBtns     = document.querySelectorAll('.filter-btn');
   var portfolioItems = document.querySelectorAll('.portfolio-item');
 
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       filterBtns.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
-
       var filter = btn.getAttribute('data-filter');
-
       portfolioItems.forEach(function(item) {
         if (filter === 'all' || item.classList.contains(filter)) {
           item.style.display = '';
-          setTimeout(function() { item.style.opacity = '1'; item.style.transform = ''; }, 10);
+          setTimeout(function() {
+            item.style.opacity = '1';
+            item.style.transform = '';
+          }, 10);
         } else {
           item.style.opacity = '0';
           item.style.transform = 'scale(0.95)';
-          setTimeout(function() { item.style.display = 'none'; }, 260);
+          setTimeout(function() { item.style.display = 'none'; }, 240);
         }
       });
     });
@@ -1433,8 +1445,8 @@
     });
   }
 
-  /* ---- YouTube background video ---- */
-  if (typeof jQuery !== 'undefined' && jQuery.fn.mb_YTPlayer) {
+  /* ---- YouTube background — skip on mobile/touch to save bandwidth ---- */
+  if (!isTouch && typeof jQuery !== 'undefined' && jQuery.fn.mb_YTPlayer) {
     jQuery('.player').mb_YTPlayer();
   }
 
@@ -1446,8 +1458,8 @@
       var target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        var offset = 70;
-        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        var navH = header.offsetHeight || 70;
+        var top  = target.getBoundingClientRect().top + window.scrollY - navH;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
     });

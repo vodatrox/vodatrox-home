@@ -65,6 +65,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Offset anchor scroll targets so fixed nav doesn't cover them */
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -655,6 +657,9 @@ button {
   overflow: hidden;
   position: relative;
   z-index: 5;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .marquee-track {
@@ -2189,6 +2194,496 @@ div.pp_default .pp_nav .pp_previous {
   width: 16px;
   height: 16px;
   fill: currentColor;
+}
+
+/* ==============================================================
+   24. MOBILE UX FIXES — Comprehensive pass for 90% mobile audience
+   ============================================================== */
+
+/* ----------------------------------------------------------
+   A. Touch Interaction Fixes
+      Items hidden behind hover-only opacity/transform are
+      permanently shown on devices that cannot hover.
+   ---------------------------------------------------------- */
+
+/* iOS tap highlight removal — cleaner feel */
+a, button, .filter-btn, .service-card, .portfolio-item,
+.team-card, .industry-card, .why-card {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@media (hover: none) {
+  /* A1 — Service "Learn more" link always visible on touch */
+  .service-link {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* A2 — Portfolio overlay & zoom always visible on touch */
+  .portfolio-overlay {
+    opacity: 1;
+  }
+  .portfolio-zoom {
+    opacity: 1;
+    background: rgba(0,0,0,0.45);
+  }
+  /* Prevent zoom on img scale since hover never fires */
+  .portfolio-item:hover img {
+    transform: none;
+  }
+
+  /* A3 — Team socials overlay always visible on touch */
+  .team-socials-overlay {
+    transform: translateY(0);
+  }
+
+  /* A4 — Suppress heavy hover transforms on touch (no jank) */
+  .service-card:hover,
+  .team-card:hover,
+  .why-card:hover,
+  .industry-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .service-card:hover::after {
+    transform: scaleX(0);
+  }
+  .why-card:hover::before {
+    transform: scaleX(0);
+  }
+  .process-step:hover .step-number {
+    transform: none;
+  }
+  .btn-primary:hover,
+  .btn-outline-dark:hover,
+  .btn-white:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .whatsapp-float:hover {
+    transform: none;
+  }
+}
+
+/* iOS momentum scroll on mobile drawer */
+.nav-mobile-drawer {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ----------------------------------------------------------
+   B + C + D + E  @media (max-width: 768px) — Primary mobile
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* === NAV FIXES === */
+  /* E1 — Larger hamburger tap target (min 44×44px) */
+  .nav-hamburger {
+    padding: 11px 10px;
+    margin-right: -10px;
+  }
+
+  /* E2 — Drawer CTA button full width */
+  .nav-mobile-drawer .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Tighter nav padding on mobile */
+  .vdx-nav {
+    padding: 16px 20px;
+    gap: 0;
+  }
+  #vdx-header.scrolled .vdx-nav {
+    padding: 12px 20px;
+  }
+
+  /* === HERO FIXES === */
+  /* C5 — Reduce top hero padding (was 120px) */
+  .hero-content {
+    padding: 90px 20px 60px;
+  }
+
+  /* B1 — Hide hero trust separators when items wrap */
+  .hero-trust-sep {
+    display: none;
+  }
+
+  /* Hero trust — show as 2×2 grid on mobile */
+  .hero-trust {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding-top: 24px;
+  }
+
+  .hero-trust-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: var(--radius);
+    padding: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .hero-trust-item strong {
+    font-size: 20px;
+    display: block;
+  }
+
+  /* B2 — Hero action buttons full-width */
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 24px;
+  }
+
+  /* Scroll cue hidden on mobile — saves vertical space */
+  .scroll-cue {
+    display: none;
+  }
+
+  /* === SECTION ANATOMY === */
+  /* C1 — section-subheading smaller on mobile */
+  .section-subheading {
+    font-size: 15px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  /* === ABOUT === */
+  /* B3 — Restore about-pillars 2-col (overrides the 1fr collapse above) */
+  .about-pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* F3 — about-vm-icon smaller when stacked */
+  .about-vm {
+    margin: 20px 0 24px;
+    gap: 12px;
+  }
+  .about-vm-item {
+    padding: 16px;
+    gap: 12px;
+  }
+  .about-vm-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 6px;
+  }
+  .about-vm-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .about-lead {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  /* === SERVICES === */
+  /* C3 — Reduced service card padding on mobile */
+  .service-card {
+    padding: 24px 20px;
+    gap: 12px;
+  }
+
+  /* === CTA BANNER === */
+  /* B4 — Reduce heavy vertical padding */
+  #cta-banner {
+    padding: 64px 0;
+  }
+
+  .cta-sub {
+    font-size: 15px;
+  }
+
+  /* === TESTIMONIALS === */
+  /* C4 — Testimonial card lighter padding on mobile */
+  .testimonial-card {
+    padding: 24px 20px;
+    gap: 18px;
+  }
+
+  /* Show all testimonials in a single col with full width */
+  .testimonials-grid {
+    max-width: 100%;
+  }
+
+  /* === CONTACT === */
+  .contact-layout {
+    gap: 36px;
+  }
+
+  /* === PORTFOLIO FILTER === */
+  /* B6 — Horizontal scroll strip */
+  .portfolio-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    margin-bottom: 32px;
+    scrollbar-width: none;
+    gap: 8px;
+  }
+  .portfolio-filter::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-height: 40px;
+  }
+
+  /* === FOOTER === */
+  .footer-main {
+    padding: 48px 0 36px;
+    gap: 32px;
+  }
+  .footer-tagline {
+    max-width: 100%;
+  }
+
+  /* === ANIMATION === */
+  /* D1 — Zero reveal stagger on mobile (no choppy delay) */
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3,
+  .reveal-delay-4,
+  .reveal-delay-5 {
+    transition-delay: 0s;
+  }
+
+  /* F2 — why-number smaller on mobile */
+  .why-number {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .why-card {
+    padding: 24px 20px;
+  }
+}
+
+/* ----------------------------------------------------------
+   B5, B7, B8 — @media (max-width: 540px)
+   ---------------------------------------------------------- */
+@media (max-width: 540px) {
+  /* B5 — CTA actions full-width stacked buttons */
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* B7 — Process: vertical timeline with left border */
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 20px;
+  }
+
+  .process-steps::before {
+    display: block;
+    top: 26px;
+    left: 0;
+    right: auto;
+    width: 2px;
+    height: calc(100% - 52px);
+    background: var(--stone-200);
+  }
+
+  .process-step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 0 36px 24px;
+    gap: 16px;
+  }
+
+  .process-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .step-number {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .step-content {
+    text-align: left;
+  }
+
+  .step-title {
+    text-align: left;
+    font-size: 15px;
+  }
+
+  .step-desc {
+    text-align: left;
+  }
+
+  /* Stats — keep 2×2 grid, don't collapse to 1-col */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .stat-block {
+    border-right: 1px solid rgba(255,255,255,0.06) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    padding: 28px 16px;
+  }
+
+  .stat-block:nth-child(2n) {
+    border-right: none !important;
+  }
+
+  .stat-block:nth-last-child(-n+2) {
+    border-bottom: none !important;
+  }
+
+  /* B8 — Team grid full-width (remove constrained max-width) */
+  .team-grid {
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Portfolio 2-col on small mobile */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+
+  /* Smaller portfolio overlay text on 2-col */
+  .portfolio-title {
+    font-size: 13px;
+  }
+
+  .portfolio-overlay {
+    padding: 14px;
+  }
+}
+
+/* ----------------------------------------------------------
+   C2 — @media (max-width: 480px) — tightest section padding
+   ---------------------------------------------------------- */
+@media (max-width: 480px) {
+  :root {
+    --section-py: 56px;
+  }
+
+  /* Hero heading a bit tighter */
+  .hero-heading {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  /* About visual hidden — already hidden, but ensure */
+  .about-float-stat {
+    display: none;
+  }
+
+  /* Industries 2-col still fine at 480px */
+}
+
+/* ----------------------------------------------------------
+   F1 — @media (max-width: 400px) — industries drop to 1-col
+   ---------------------------------------------------------- */
+@media (max-width: 400px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .industry-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .industry-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ----------------------------------------------------------
+   C6 — @media (max-width: 380px) — tightest container
+   ---------------------------------------------------------- */
+@media (max-width: 380px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .about-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-trust {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------------------------------
+   Touch active states — visual feedback on tap
+   ---------------------------------------------------------- */
+@media (hover: none) {
+  .btn:active {
+    opacity: 0.82;
+    transform: scale(0.98);
+  }
+
+  .filter-btn:active {
+    background: var(--red);
+    color: var(--white);
+    border-color: var(--red);
+  }
+
+  .service-card:active {
+    border-color: rgba(216,14,14,0.2);
+    background: rgba(216,14,14,0.02);
+  }
+
+  .industry-card:active {
+    background: var(--ink-700);
+    border-color: rgba(216,14,14,0.2);
+  }
+
+  .footer-links a:active,
+  .contact-info-value a:active {
+    color: var(--red);
+  }
+
+  .nav-mobile-drawer a:active {
+    color: var(--white);
+  }
 }
 
 /* ----------------------------------------------------------
