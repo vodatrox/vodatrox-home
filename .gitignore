@@ -1,0 +1,248 @@
+# =============================================================================
+# Igbo Calendar — Comprehensive .gitignore
+# Covers: Web (JS/HTML/CSS), Android (Kotlin/Gradle), iOS (Swift/Xcode)
+# =============================================================================
+
+
+# =============================================================================
+# GENERAL / OS
+# =============================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon?
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+
+# Editors & IDEs (generic)
+*.swp
+*.swo
+*.swn
+*~
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+nbproject/
+.project
+.classpath
+.settings/
+.factorypath
+
+# Logs & temp files
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.pid
+*.seed
+*.pid.lock
+
+
+# =============================================================================
+# WEB (JavaScript / HTML / CSS / Node)
+# =============================================================================
+
+# Dependencies
+web/node_modules/
+node_modules/
+
+# Build output
+web/dist/
+web/build/
+web/.next/
+web/out/
+web/.nuxt/
+web/.output/
+web/.cache/
+web/.parcel-cache/
+
+# Environment & secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+web/.env
+web/.env.*
+!web/.env.example
+
+# Package manager locks (keep one; ignore the others to avoid conflicts)
+# Uncomment whichever you do NOT use:
+# web/package-lock.json
+# web/yarn.lock
+# web/pnpm-lock.yaml
+
+# Coverage & testing
+web/coverage/
+web/.nyc_output/
+
+# Misc tooling
+web/.eslintcache
+web/.stylelintcache
+web/.sass-cache/
+web/*.map
+
+
+# =============================================================================
+# ANDROID (Kotlin / Gradle / Android Studio)
+# =============================================================================
+
+# Gradle build outputs
+android/.gradle/
+android/build/
+android/app/build/
+android/**/build/
+
+# Local configuration (developer machine–specific)
+android/local.properties
+android/*.properties
+!android/gradle.properties
+
+# Keystore & signing (NEVER commit private keys)
+android/*.jks
+android/*.keystore
+android/app/*.jks
+android/app/*.keystore
+android/keystore/
+android/release/
+android/signing/
+
+# Android Studio / IntelliJ
+android/.idea/
+android/**/*.iml
+android/.navigation/
+android/captures/
+
+# Generated files
+android/app/src/main/assets/
+android/app/src/*/generated/
+
+# ProGuard
+android/app/proguard-rules.pro.bak
+
+# Google Services (contains API keys — commit only if intentional)
+# android/app/google-services.json
+
+# NDK & CMake caches
+android/.externalNativeBuild/
+android/app/.externalNativeBuild/
+android/app/src/main/cpp/CMakeLists.txt.user
+
+# Lint output
+android/app/lint-results*.xml
+android/app/lint-results*.html
+
+# Test output
+android/app/src/test/
+android/app/src/androidTest/
+android/**/test-results/
+android/**/TEST-*.xml
+
+
+# =============================================================================
+# iOS (Swift / Xcode / CocoaPods / Swift Package Manager)
+# =============================================================================
+
+# Xcode derived data & build artifacts
+ios/build/
+ios/DerivedData/
+ios/**/*.xcuserdata/
+ios/**/*.xcscmblueprint
+ios/**/*.xccheckout
+ios/**/*.moved-aside
+
+# Xcode user-specific settings (do NOT commit per-developer settings)
+ios/*.xcodeproj/xcuserdata/
+ios/*.xcworkspace/xcuserdata/
+ios/**/*.xcuserdatad/
+
+# Xcode Playground
+ios/*.playground/timeline.xctimeline
+ios/*.playground/playground.xcworkspace
+
+# SPM build outputs
+ios/.build/
+ios/.swiftpm/
+
+# CocoaPods (uncomment if you use CocoaPods and don't commit the Pods folder)
+# ios/Pods/
+# ios/*.xcworkspace
+# ios/Podfile.lock
+
+# Carthage (uncomment if using Carthage)
+# ios/Carthage/Build/
+
+# Fastlane
+ios/fastlane/report.xml
+ios/fastlane/Preview.html
+ios/fastlane/screenshots/**/*.png
+ios/fastlane/test_output/
+
+# iOS distribution / signing (NEVER commit private keys or provisioning profiles)
+ios/*.p12
+ios/*.cer
+ios/*.certSigningRequest
+ios/*.mobileprovision
+ios/*.provisionprofile
+
+# Archives & IPAs
+ios/*.xcarchive
+ios/*.ipa
+ios/*.dSYM.zip
+ios/*.dSYM/
+
+# Simulator app bundles
+ios/**/*.app
+
+# Instruments
+ios/*.trace
+
+# TestFlight
+ios/AuthKey_*.p8
+
+# AppStore Connect API key (contains private key material)
+ios/AuthKey*.p8
+
+# Temporarily generated files
+ios/**/*.generated.swift
+
+
+# =============================================================================
+# SECRETS & CREDENTIALS (catch-all — belt and suspenders)
+# =============================================================================
+
+*.pem
+*.key
+*.pfx
+*.p8
+*.p12
+*.cer
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+secrets.json
+credentials.json
+service-account*.json
+firebase-adminsdk*.json
+google-services.json
+GoogleService-Info.plist
