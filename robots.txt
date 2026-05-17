@@ -1,0 +1,53 @@
+# robots.txt for https://www.vodatrox.com
+# Vodatrox Limited — Managed IT services & outsourced IT department for Nigerian SMEs
+
+User-agent: *
+Allow: /
+
+# Block search engines from junk routes (none currently, kept for future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*.json$
+Disallow: /Dockerfile
+
+# Allow common search bots explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# AI assistants / training crawlers — allow for visibility in AI search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.vodatrox.com/sitemap.xml
