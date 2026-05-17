@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for Igbo Calendar — the traditional Igbo lunar calendar app by Vodatrox Limited." />
+  <title>Privacy Policy — Igbo Calendar</title>
+  <style>
+    /* ── Reset & Base ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amber:        #D4900A;
+      --amber-light:  #F5C842;
+      --amber-muted:  rgba(212,144,10,.12);
+      --bg:           #0D0D0D;
+      --surface:      #161616;
+      --card:         #1E1E1E;
+      --border:       rgba(255,255,255,.08);
+      --text:         #F0EAD6;
+      --text-muted:   rgba(240,234,214,.55);
+      --text-dim:     rgba(240,234,214,.35);
+      --radius-lg:    16px;
+      --radius-md:    10px;
+      --radius-sm:    6px;
+      --max-w:        780px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ─────────────────────────────────────────────────────── */
+    .page-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 32px 0 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--amber) 0%, var(--amber-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(212,144,10,.35);
+    }
+
+    .site-header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .site-header p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Hero ────────────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg,
+        rgba(212,144,10,.15) 0%,
+        rgba(212,144,10,.04) 100%);
+      border: 1px solid rgba(212,144,10,.25);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      margin-bottom: 48px;
+    }
+
+    .hero-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      max-width: 560px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .meta-chip span { color: var(--amber); }
+
+    /* ── Callout ─────────────────────────────────────────────────────── */
+    .callout {
+      display: flex;
+      gap: 14px;
+      background: rgba(52,199,89,.1);
+      border: 1px solid rgba(52,199,89,.25);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      margin-bottom: 40px;
+    }
+
+    .callout-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .callout strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #34C759;
+      margin-bottom: 3px;
+    }
+
+    .callout p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ── TOC ─────────────────────────────────────────────────────────── */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      margin-bottom: 48px;
+    }
+
+    .toc-title {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    @media (max-width: 520px) {
+      .toc ol { grid-template-columns: 1fr; }
+    }
+
+    .toc li {
+      counter-increment: toc-counter;
+      font-size: 0.8125rem;
+    }
+
+    .toc li::before {
+      content: counter(toc-counter, decimal-leading-zero) "  ";
+      color: var(--amber);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .toc a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+
+    .toc a:hover { color: var(--amber); }
+
+    /* ── Sections ────────────────────────────────────────────────────── */
+    .policy-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-number {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+
+    .policy-section h3 {
+      font-size: 1.3125rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-section p {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    /* ── Sub-sections ────────────────────────────────────────────────── */
+    .subsection {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .subsection h4 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .subsection p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* ── Data Table ──────────────────────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .data-table td {
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .badge-green  { background: rgba(52,199,89,.15);  color: #34C759; border: 1px solid rgba(52,199,89,.3); }
+    .badge-blue   { background: rgba(10,132,255,.15); color: #5AC8FA; border: 1px solid rgba(10,132,255,.3); }
+    .badge-gray   { background: rgba(255,255,255,.06); color: var(--text-muted); border: 1px solid var(--border); }
+
+    /* ── Bullet Lists ────────────────────────────────────────────────── */
+    .policy-list {
+      list-style: none;
+      margin: 12px 0 16px;
+    }
+
+    .policy-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: 5px 0;
+      line-height: 1.6;
+    }
+
+    .policy-list li::before {
+      content: "◆";
+      color: var(--amber);
+      font-size: 0.5rem;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* ── Platform Cards ──────────────────────────────────────────────── */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .platform-grid { grid-template-columns: 1fr; }
+    }
+
+    .platform-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+
+    .platform-card .platform-icon { font-size: 1.5rem; margin-bottom: 8px; }
+
+    .platform-card h5 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+
+    .platform-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    .platform-card a {
+      color: var(--amber);
+      font-size: 0.75rem;
+      text-decoration: none;
+    }
+
+    /* ── Rights Grid ─────────────────────────────────────────────────── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .right-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .right-card .right-icon { font-size: 1.2rem; margin-bottom: 6px; }
+
+    .right-card h5 {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .right-card p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Contact Card ────────────────────────────────────────────────── */
+    .contact-card {
+      background: linear-gradient(135deg,
+        rgba(212,144,10,.12) 0%,
+        rgba(212,144,10,.04) 100%);
+      border: 1px solid rgba(212,144,10,.3);
+      border-radius: var(--radius-lg);
+      padding: 28px 28px;
+    }
+
+    .contact-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .contact-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .contact-items { display: flex; flex-direction: column; gap: 10px; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.875rem;
+    }
+
+    .contact-item-label {
+      min-width: 80px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .contact-item a, .contact-item span {
+      color: var(--amber);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ── Divider ─────────────────────────────────────────────────────── */
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 48px 0;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .site-footer p {
+      font-size: 0.8125rem;
+      color: var(--text-dim);
+    }
+
+    .site-footer a {
+      color: var(--amber);
+      text-decoration: none;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero { padding: 24px 20px; }
+      .hero h2 { font-size: 1.5rem; }
+      .page-wrap { padding: 0 16px 60px; }
+      .data-table { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ── Header ─────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="logo-mark" aria-hidden="true">📅</div>
+    <div>
+      <h1>Igbo Calendar</h1>
+      <p>by Vodatrox Limited</p>
+    </div>
+  </header>
+
+  <!-- ── Hero ───────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-label">Legal Document</div>
+    <h2>Privacy Policy</h2>
+    <p>
+      This Privacy Policy explains how Vodatrox Limited operates the Igbo Calendar
+      application and handles information in connection with your use of the app.
+      We believe privacy is a right, not a privilege.
+    </p>
+    <div class="meta-row">
+      <div class="meta-chip"><span>App</span> Igbo Calendar</div>
+      <div class="meta-chip"><span>Developer</span> Vodatrox Limited</div>
+      <div class="meta-chip"><span>Platforms</span> Android · iOS · Web</div>
+      <div class="meta-chip"><span>Effective</span> March 8, 2026</div>
+      <div class="meta-chip"><span>Version</span> 1.0</div>
+    </div>
+  </section>
+
+  <!-- ── Summary Callout ────────────────────────────────────────────── -->
+  <div class="callout" role="note">
+    <div class="callout-icon" aria-hidden="true">✅</div>
+    <div>
+      <strong>The short version: we collect nothing about you.</strong>
+      <p>
+        Igbo Calendar is a fully offline, educational cultural app. It does not connect
+        to the internet, does not collect personal data, does not use analytics or
+        advertising, and does not create user accounts. All calendar calculations
+        run entirely on your device.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Table of Contents ──────────────────────────────────────────── -->
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#s1">About This Policy</a></li>
+      <li><a href="#s2">Information We Collect</a></li>
+      <li><a href="#s3">Information We Do NOT Collect</a></li>
+      <li><a href="#s4">Local Device Storage</a></li>
+      <li><a href="#s5">Platform & Store Services</a></li>
+      <li><a href="#s6">Internet Access</a></li>
+      <li><a href="#s7">Children's Privacy</a></li>
+      <li><a href="#s8">Your Rights (GDPR &amp; CCPA)</a></li>
+      <li><a href="#s9">Data Security</a></li>
+      <li><a href="#s10">Data Retention</a></li>
+      <li><a href="#s11">Changes to This Policy</a></li>
+      <li><a href="#s12">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 1 — About This Policy
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s1">
+    <div class="section-number">01 / 12</div>
+    <h3>About This Policy</h3>
+
+    <p>
+      This Privacy Policy applies to the Igbo Calendar mobile application available
+      on <strong>Android</strong> (Google Play, package ID:
+      <code>com.vodatrox.igbocalendar</code>) and <strong>iOS</strong> (Apple App
+      Store, bundle ID: <code>com.igbocalendar.app</code>), as well as the companion
+      <strong>web version</strong> hosted by Vodatrox Limited.
+    </p>
+
+    <p>
+      The application is developed and published by <strong>Vodatrox Limited</strong>,
+      a company registered in Nigeria. References to "we", "us", or "our" in this
+      document refer to Vodatrox Limited. References to "you" or "your" refer to any
+      individual who downloads, installs, or uses the Igbo Calendar application.
+    </p>
+
+    <p>
+      By downloading and using Igbo Calendar you acknowledge that you have read and
+      understood this Privacy Policy. If you do not agree with any part of this
+      policy, please discontinue use of the application.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 2 — Information We Collect
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s2">
+    <div class="section-number">02 / 12</div>
+    <h3>Information We Collect</h3>
+
+    <p>
+      Igbo Calendar is designed with a <strong>privacy-by-default</strong> approach.
+      We collect the absolute minimum necessary to deliver the app experience.
+    </p>
+
+    <table class="data-table" aria-label="Data collection summary">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Collected?</th>
+          <th>Purpose</th>
+          <th>Stored Where</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Theme preference (Amber / Green)</td>
+          <td><span class="badge badge-green">Yes — Local Only</span></td>
+          <td>Remember your chosen colour theme across sessions</td>
+          <td>Device only (SharedPreferences / UserDefaults)</td>
+        </tr>
+        <tr>
+          <td>Personal information (name, email, phone)</td>
+          <td><span class="badge badge-gray">Not Collected</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Location data</td>
+          <td><span class="badge badge-gray">Not Collected</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Usage analytics / crash reports</td>
+          <td><span class="badge badge-gray">Not Collected</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Device identifiers (IMEI, advertising ID)</td>
+          <td><span class="badge badge-gray">Not Collected</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Contacts, camera, microphone, storage</td>
+          <td><span class="badge badge-gray">Not Accessed</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      In summary: <strong>the only data associated with you is a single theme
+      preference stored locally on your own device.</strong> This preference
+      never leaves your device and is never transmitted to us or any third party.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 3 — Information We Do NOT Collect
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s3">
+    <div class="section-number">03 / 12</div>
+    <h3>Information We Do NOT Collect</h3>
+
+    <p>
+      To be explicit, Igbo Calendar does <strong>not</strong> collect, transmit,
+      store, or process any of the following:
+    </p>
+
+    <ul class="policy-list">
+      <li>Your name, email address, phone number, or any other identifier</li>
+      <li>Your precise or approximate geographical location</li>
+      <li>Your IP address or network information</li>
+      <li>Device identifiers, advertising IDs, or hardware serial numbers</li>
+      <li>Browsing history, search history, or in-app navigation behaviour</li>
+      <li>App usage patterns, session durations, or feature interactions</li>
+      <li>Crash reports or diagnostic logs sent to our servers</li>
+      <li>Photos, videos, contacts, calendar events, or files on your device</li>
+      <li>Microphone or camera input</li>
+      <li>Biometric data of any kind</li>
+      <li>Financial or payment information</li>
+      <li>Health or fitness data</li>
+      <li>User-generated content (the app has no input fields for personal content)</li>
+    </ul>
+
+    <p>
+      The application has <strong>no internet permission</strong> declared in its
+      Android manifest and makes <strong>no outbound network connections</strong>.
+      All calendar calculations — including conversion between Gregorian and Igbo
+      dates, market day determination, and month/week identification — are performed
+      entirely on your local device without any server communication.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 4 — Local Device Storage
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s4">
+    <div class="section-number">04 / 12</div>
+    <h3>Local Device Storage</h3>
+
+    <p>
+      The application stores a small amount of data <strong>locally on your
+      device</strong> to provide a consistent user experience across sessions.
+      This data remains exclusively on your device and is never transmitted
+      externally.
+    </p>
+
+    <div class="subsection">
+      <h4>📱 Android — SharedPreferences</h4>
+      <p>
+        On Android, Igbo Calendar uses Android's <code>SharedPreferences</code>
+        system to store your selected colour theme (Amber or Green). This is a
+        standard key-value store that is sandboxed to the app and inaccessible
+        to other apps on your device. Cloud backup is explicitly disabled
+        (<code>android:allowBackup="false"</code>), meaning this preference
+        is never uploaded to Google Drive or any other service.
+      </p>
+    </div>
+
+    <div class="subsection">
+      <h4>🍎 iOS — UserDefaults</h4>
+      <p>
+        On iOS, the same theme preference is stored using <code>UserDefaults</code>.
+        This is an on-device key-value store private to the application sandbox.
+        iCloud sync for this preference is not enabled.
+      </p>
+    </div>
+
+    <div class="subsection">
+      <h4>🌐 Web — No Persistent Storage</h4>
+      <p>
+        The web version of Igbo Calendar may use your browser's
+        <code>localStorage</code> or <code>sessionStorage</code> to remember
+        your theme preference during and across browsing sessions. No cookies
+        are used for tracking purposes. No data is transmitted to our servers
+        from the web version.
+      </p>
+    </div>
+
+    <p>
+      You can clear this locally stored data at any time by uninstalling the app
+      (Android/iOS) or clearing your browser's site data (web). No data will
+      be lost from any server, because none was ever sent.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 5 — Platform & Store Services
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s5">
+    <div class="section-number">05 / 12</div>
+    <h3>Platform &amp; Store Services</h3>
+
+    <p>
+      While Igbo Calendar itself collects no data, the platforms through which
+      it is distributed — Google Play and the Apple App Store — operate
+      independently of us and are governed by their own privacy policies.
+      These platform services may collect certain information as part of standard
+      app store operations.
+    </p>
+
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="platform-icon">🤖</div>
+        <h5>Google Play (Android)</h5>
+        <p>
+          Google may collect install statistics, crash reports, and device
+          information as part of Google Play Services. This data is governed
+          by Google's Privacy Policy and is not accessible to Vodatrox Limited.
+        </p>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+          Google Privacy Policy →
+        </a>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon">🍎</div>
+        <h5>Apple App Store (iOS)</h5>
+        <p>
+          Apple may collect app download and install information via the App
+          Store. This data is subject to Apple's Privacy Policy and is not
+          shared with Vodatrox Limited beyond aggregated analytics.
+        </p>
+        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">
+          Apple Privacy Policy →
+        </a>
+      </div>
+    </div>
+
+    <p>
+      We have no control over, and are not responsible for, the data practices
+      of Google, Apple, or any other platform. We encourage you to review their
+      respective privacy policies to understand how they handle your data.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 6 — Internet Access
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s6">
+    <div class="section-number">06 / 12</div>
+    <h3>Internet Access</h3>
+
+    <p>
+      <strong>The Android and iOS versions of Igbo Calendar do not request or
+      use internet access.</strong> The <code>INTERNET</code> permission is
+      not declared in the Android application manifest. The app operates in a
+      fully offline mode at all times.
+    </p>
+
+    <p>
+      All core functionality — Igbo/Gregorian date conversion, market day
+      calculation, the 13-month calendar structure, week (Izu) determination,
+      and all educational content about Igbo months, weeks, market days, and
+      festivals — is bundled within the application and computed locally on
+      your device.
+    </p>
+
+    <p>
+      The web version at <a href="https://calendar.vodatrox.com" target="_blank"
+      rel="noopener noreferrer">calendar.vodatrox.com</a> operates as a standard
+      static website. Standard web server logs (IP address, request timestamp,
+      browser type) may be generated by the hosting provider as part of normal
+      server operation. These logs are not used for user profiling or tracking,
+      and are not shared with third parties except where required by law or
+      necessary for server security.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 7 — Children's Privacy
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s7">
+    <div class="section-number">07 / 12</div>
+    <h3>Children's Privacy</h3>
+
+    <p>
+      Igbo Calendar is an educational cultural application suitable for users
+      of all ages, including children. Because the application does not collect
+      any personal information from any user, it does not collect personal
+      information from children either.
+    </p>
+
+    <p>
+      We comply with the <strong>Children's Online Privacy Protection Act
+      (COPPA)</strong> in the United States, the <strong>General Data Protection
+      Regulation (GDPR)</strong> provisions for children in the European Union,
+      and equivalent child privacy legislation in Nigeria and other jurisdictions.
+      No special age verification is required to use this application because no
+      personal data collection occurs.
+    </p>
+
+    <p>
+      If you are a parent or guardian and have any concerns about your child's
+      use of Igbo Calendar, please contact us at the address provided in
+      Section 12. We are happy to address any questions.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 8 — Your Rights (GDPR & CCPA)
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s8">
+    <div class="section-number">08 / 12</div>
+    <h3>Your Privacy Rights</h3>
+
+    <p>
+      Depending on where you are located, you may have certain rights under
+      applicable data protection law. Even though Igbo Calendar does not collect
+      personal data, we outline these rights below for full transparency.
+    </p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="right-icon">👁️</div>
+        <h5>Right to Access</h5>
+        <p>You may request a copy of any personal data we hold about you. In this case: none.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">✏️</div>
+        <h5>Right to Rectification</h5>
+        <p>You may request correction of inaccurate personal data. We hold no such data.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">🗑️</div>
+        <h5>Right to Erasure</h5>
+        <p>You may request deletion of your data. Uninstalling the app erases all local data.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">🚫</div>
+        <h5>Right to Object</h5>
+        <p>You may object to processing of your data. We perform no processing of personal data.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">📦</div>
+        <h5>Right to Portability</h5>
+        <p>You may request a portable copy of your data. The only data is a local theme preference.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">⏸️</div>
+        <h5>Right to Restrict Processing</h5>
+        <p>You may request restriction of processing. No processing of personal data occurs.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h4>GDPR (European Union / EEA / UK)</h4>
+      <p>
+        If you are located in the European Union, European Economic Area, or United
+        Kingdom, you are protected by the General Data Protection Regulation (GDPR)
+        or UK GDPR. Because Igbo Calendar does not collect, process, or store any
+        personal data beyond a local device preference, the legal basis for processing
+        under Article 6 GDPR is not triggered. Your data protection rights are fully
+        preserved by the app's architecture. For any data protection enquiries,
+        you may also lodge a complaint with your local supervisory authority.
+      </p>
+    </div>
+
+    <div class="subsection">
+      <h4>CCPA (California, USA)</h4>
+      <p>
+        If you are a California resident, the California Consumer Privacy Act (CCPA)
+        and California Privacy Rights Act (CPRA) provide you with specific rights
+        regarding your personal information. Igbo Calendar does not sell, share, or
+        disclose personal information to third parties. We do not engage in targeted
+        advertising. As we do not collect personal data, the CCPA rights of access,
+        deletion, and opt-out of sale are satisfied by the app's design.
+      </p>
+    </div>
+
+    <div class="subsection">
+      <h4>NDPR (Nigeria)</h4>
+      <p>
+        As a Nigerian company, Vodatrox Limited acknowledges and respects the Nigeria
+        Data Protection Regulation (NDPR) issued by the National Information
+        Technology Development Agency (NITDA). Igbo Calendar is designed to be fully
+        compliant with the NDPR. No personal data of Nigerian or non-Nigerian users
+        is collected, processed, or transferred.
+      </p>
+    </div>
+
+    <p>
+      To exercise any of the above rights or for any privacy-related query, please
+      contact us at the address listed in Section 12.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 9 — Data Security
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s9">
+    <div class="section-number">09 / 12</div>
+    <h3>Data Security</h3>
+
+    <p>
+      Because Igbo Calendar does not transmit any user data over the internet, the
+      most significant class of data breach risk — unauthorised network interception —
+      does not apply to this application.
+    </p>
+
+    <p>
+      The sole piece of data stored by the application (your theme preference) is
+      protected by your device's operating system sandbox. On both Android and iOS,
+      application data is sandboxed and inaccessible to other applications without
+      explicit system-level compromise (such as a rooted/jailbroken device). We
+      recommend keeping your device's operating system up to date to benefit from the
+      latest security patches.
+    </p>
+
+    <p>
+      We take the security of our application code seriously. The Android release
+      build is minified and resource-shrunken using ProGuard to reduce the attack
+      surface. We do not hard-code sensitive credentials into the application
+      because no server-side communication takes place.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 10 — Data Retention
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s10">
+    <div class="section-number">10 / 12</div>
+    <h3>Data Retention</h3>
+
+    <p>
+      The theme preference stored locally on your device is retained for as long
+      as the application remains installed. It is automatically and permanently
+      deleted when you uninstall the application from your device. No copy of
+      this preference is held on our servers at any time.
+    </p>
+
+    <p>
+      Standard web server access logs (IP address, user-agent, request timestamp)
+      generated by the web hosting provider are typically retained for a period of
+      <strong>up to 90 days</strong> for security and operational monitoring
+      purposes, after which they are automatically purged. These logs are not
+      linked to individual users and are not used for any form of profiling.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 11 — Changes to This Policy
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s11">
+    <div class="section-number">11 / 12</div>
+    <h3>Changes to This Policy</h3>
+
+    <p>
+      We may update this Privacy Policy from time to time. Any changes will be
+      reflected by updating the <strong>Effective Date</strong> at the top of this
+      document. Material changes — particularly any that introduce new categories of
+      data collection — will be communicated through one or more of the following:
+    </p>
+
+    <ul class="policy-list">
+      <li>An update notice visible within the application upon launch</li>
+      <li>A new app store release with updated policy notes in the release description</li>
+      <li>Publication of the revised policy at the URL where this document is hosted</li>
+    </ul>
+
+    <p>
+      We encourage you to review this Privacy Policy periodically. Your continued
+      use of Igbo Calendar following the posting of changes constitutes your
+      acceptance of the revised policy. If you do not agree to the changes, please
+      uninstall the application.
+    </p>
+
+    <p>
+      Given that the app does not collect personal data, changes to this policy
+      are likely to be administrative (e.g. updated contact details, new supported
+      jurisdictions) rather than substantive.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 12 — Contact Us
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="policy-section" id="s12">
+    <div class="section-number">12 / 12</div>
+    <h3>Contact Us</h3>
+
+    <p>
+      If you have any questions, concerns, or requests relating to this Privacy
+      Policy or your privacy rights, please contact us using the details below.
+      We aim to respond to all privacy-related enquiries within <strong>14 business
+      days</strong>.
+    </p>
+
+    <div class="contact-card">
+      <h4>Vodatrox Limited</h4>
+      <p>Developer of Igbo Calendar — cultural technology for the preservation of Igbo heritage.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <span class="contact-item-label">Website</span>
+          <a href="https://vodatrox.com" target="_blank" rel="noopener noreferrer">vodatrox.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Subject</span>
+          <span>Igbo Calendar — Privacy Enquiry</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Android ID</span>
+          <span>com.vodatrox.igbocalendar</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">iOS Bundle</span>
+          <span>com.igbocalendar.app</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" role="separator"></div>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>
+      &copy; 2026 Vodatrox Limited. All rights reserved.
+      Igbo Calendar is a cultural heritage project.
+    </p>
+    <p>
+      <a href="https://vodatrox.com" target="_blank" rel="noopener noreferrer">
+        vodatrox.com
+      </a>
+    </p>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>
