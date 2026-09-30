@@ -26,6 +26,22 @@
 
   --white:      #FFFFFF;
 
+  /* Semantic tokens for light-section surfaces and text. Dark sections
+     (hero, stats, footer…) use the --ink-* tokens directly and do not
+     change between colour schemes. */
+  --surface:    var(--white);
+  --surface-2:  var(--stone-50);
+  --line:       var(--stone-200);
+  --text-900:   var(--ink-900);
+  --text-800:   var(--ink-800);
+  --text-700:   var(--ink-700);
+  --text-500:   var(--ink-500);
+  --text-400:   var(--ink-400);
+  --text-300:   var(--ink-300);
+  --red-text:   var(--red);
+
+  color-scheme: light dark;
+
   /* Typography */
   --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Space Grotesk', var(--font-sans);
@@ -73,8 +89,8 @@ body {
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.7;
-  color: var(--ink-700);
-  background: var(--white);
+  color: var(--text-700);
+  background: var(--surface);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -131,7 +147,7 @@ button {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
   margin-bottom: 18px;
 }
 
@@ -150,13 +166,13 @@ button {
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.02em;
-  color: var(--ink-800);
+  color: var(--text-800);
 }
 
 .section-subheading {
   font-size: 17px;
   line-height: 1.65;
-  color: var(--ink-500);
+  color: var(--text-500);
   max-width: 580px;
 }
 
@@ -228,13 +244,13 @@ button {
 
 .btn-outline-dark {
   background: transparent;
-  color: var(--ink-800);
-  border: 2px solid var(--stone-200);
+  color: var(--text-800);
+  border: 2px solid var(--line);
 }
 
 .btn-outline-dark:hover {
-  border-color: var(--ink-800);
-  color: var(--ink-800);
+  border-color: var(--text-800);
+  color: var(--text-800);
   transform: translateY(-1px);
 }
 
@@ -571,7 +587,7 @@ button {
 
 .hero-heading em {
   font-style: normal;
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .hero-desc {
@@ -707,7 +723,7 @@ button {
    ---------------------------------------------------------- */
 #about {
   padding: var(--section-py) 0;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .about-grid {
@@ -724,7 +740,7 @@ button {
 .about-lead {
   font-size: 17px;
   line-height: 1.72;
-  color: var(--ink-500);
+  color: var(--text-500);
   margin-bottom: 32px;
 }
 
@@ -740,8 +756,8 @@ button {
   align-items: flex-start;
   gap: 12px;
   padding: 16px;
-  background: var(--stone-50);
-  border: 1px solid var(--stone-200);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   transition: border-color var(--t), background var(--t);
 }
@@ -772,7 +788,7 @@ button {
 .about-pillar-label {
   font-size: 13px;
   font-weight: 600;
-  color: var(--ink-800);
+  color: var(--text-800);
   line-height: 1.4;
   margin-top: 2px;
 }
@@ -828,7 +844,7 @@ button {
   font-family: var(--font-display);
   font-size: 42px;
   font-weight: 700;
-  color: var(--red);
+  color: var(--red-text);
   line-height: 1;
 }
 
@@ -845,7 +861,7 @@ button {
   position: absolute;
   top: 28px;
   right: -20px;
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   padding: 16px 20px;
   box-shadow: var(--shadow-lg);
@@ -856,7 +872,7 @@ button {
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 700;
-  color: var(--ink-800);
+  color: var(--text-800);
   line-height: 1;
 }
 
@@ -865,7 +881,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-400);
+  color: var(--text-400);
   margin-top: 4px;
 }
 
@@ -874,7 +890,7 @@ button {
    ---------------------------------------------------------- */
 #services {
   padding: var(--section-py) 0;
-  background: var(--stone-50);
+  background: var(--surface-2);
 }
 
 .services-grid {
@@ -884,8 +900,8 @@ button {
 }
 
 .service-card {
-  background: var(--white);
-  border: 1px solid var(--stone-200);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
   position: relative;
@@ -927,7 +943,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--red);
+  color: var(--red-text);
   flex-shrink: 0;
   transition: background var(--t);
 }
@@ -947,14 +963,14 @@ button {
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 600;
-  color: var(--ink-800);
+  color: var(--text-800);
   line-height: 1.3;
 }
 
 .service-desc {
   font-size: 14px;
   line-height: 1.7;
-  color: var(--ink-500);
+  color: var(--text-500);
   flex: 1;
 }
 
@@ -964,7 +980,7 @@ button {
   gap: 6px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--red);
+  color: var(--red-text);
   margin-top: 8px;
   opacity: 0;
   transform: translateX(-6px);
@@ -1037,7 +1053,7 @@ button {
 }
 
 .stat-number span.suffix {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .stat-label {
@@ -1053,7 +1069,7 @@ button {
    ---------------------------------------------------------- */
 #process {
   padding: var(--section-py) 0;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .process-steps {
@@ -1072,7 +1088,7 @@ button {
   left: calc(12.5% + 2px);
   right: calc(12.5% + 2px);
   height: 1px;
-  background: var(--stone-200);
+  background: var(--line);
   z-index: 0;
 }
 
@@ -1089,8 +1105,8 @@ button {
 .step-number {
   width: 52px;
   height: 52px;
-  background: var(--white);
-  border: 2px solid var(--stone-200);
+  background: var(--surface);
+  border: 2px solid var(--line);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1098,7 +1114,7 @@ button {
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: 700;
-  color: var(--ink-400);
+  color: var(--text-400);
   margin-bottom: 24px;
   transition: all var(--t);
   position: relative;
@@ -1106,7 +1122,7 @@ button {
 
 .process-step:hover .step-number {
   border-color: var(--red);
-  color: var(--red);
+  color: var(--red-text);
   background: var(--red-muted);
   transform: scale(1.1);
 }
@@ -1115,14 +1131,14 @@ button {
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 600;
-  color: var(--ink-800);
+  color: var(--text-800);
   margin-bottom: 10px;
 }
 
 .step-desc {
   font-size: 13px;
   line-height: 1.65;
-  color: var(--ink-500);
+  color: var(--text-500);
 }
 
 /* ----------------------------------------------------------
@@ -1130,7 +1146,7 @@ button {
    ---------------------------------------------------------- */
 #portfolio {
   padding: var(--section-py) 0;
-  background: var(--stone-50);
+  background: var(--surface-2);
 }
 
 .portfolio-filter {
@@ -1145,9 +1161,9 @@ button {
   border-radius: 100px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--ink-500);
-  border: 1.5px solid var(--stone-200);
-  background: var(--white);
+  color: var(--text-500);
+  border: 1.5px solid var(--line);
+  background: var(--surface);
   cursor: pointer;
   transition: all var(--t-fast);
 }
@@ -1170,7 +1186,7 @@ button {
   overflow: hidden;
   position: relative;
   aspect-ratio: 4/3;
-  background: var(--stone-200);
+  background: var(--line);
   cursor: pointer;
 }
 
@@ -1206,7 +1222,7 @@ button {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
   margin-bottom: 6px;
 }
 
@@ -1250,7 +1266,7 @@ button {
    ---------------------------------------------------------- */
 #team {
   padding: var(--section-py) 0;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .team-grid {
@@ -1262,8 +1278,8 @@ button {
 .team-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--stone-50);
-  border: 1px solid var(--stone-200);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
   transition: box-shadow var(--t), transform var(--t);
 }
 
@@ -1276,7 +1292,7 @@ button {
   position: relative;
   aspect-ratio: 3/3.5;
   overflow: hidden;
-  background: var(--stone-200);
+  background: var(--line);
 }
 
 .team-photo img {
@@ -1359,7 +1375,7 @@ button {
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 600;
-  color: var(--ink-800);
+  color: var(--text-800);
   margin-bottom: 4px;
 }
 
@@ -1368,14 +1384,14 @@ button {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
   margin-bottom: 10px;
 }
 
 .team-bio {
   font-size: 13px;
   line-height: 1.65;
-  color: var(--ink-500);
+  color: var(--text-500);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -1439,7 +1455,7 @@ button {
   font-family: Georgia, serif;
   font-size: 56px;
   line-height: 1;
-  color: var(--red);
+  color: var(--red-text);
   opacity: 0.6;
   height: 32px;
   display: block;
@@ -1485,9 +1501,9 @@ button {
    ---------------------------------------------------------- */
 #clients {
   padding: 64px 0;
-  background: var(--white);
-  border-top: 1px solid var(--stone-200);
-  border-bottom: 1px solid var(--stone-200);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .clients-label {
@@ -1496,7 +1512,7 @@ button {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-300);
+  color: var(--text-300);
   margin-bottom: 40px;
 }
 
@@ -1518,12 +1534,12 @@ button {
 
 .clients-scroll::before {
   left: 0;
-  background: linear-gradient(to right, var(--white), transparent);
+  background: linear-gradient(to right, var(--surface), transparent);
 }
 
 .clients-scroll::after {
   right: 0;
-  background: linear-gradient(to left, var(--white), transparent);
+  background: linear-gradient(to left, var(--surface), transparent);
 }
 
 .clients-track {
@@ -1604,7 +1620,7 @@ button {
 
 .btn-white {
   background: var(--white);
-  color: var(--red);
+  color: var(--red-text);
   border: 2px solid var(--white);
   font-weight: 700;
 }
@@ -1632,7 +1648,7 @@ button {
    ---------------------------------------------------------- */
 #contact {
   padding: var(--section-py) 0;
-  background: var(--stone-50);
+  background: var(--surface-2);
 }
 
 .contact-layout {
@@ -1663,7 +1679,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--red);
+  color: var(--red-text);
   flex-shrink: 0;
 }
 
@@ -1678,29 +1694,29 @@ button {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-400);
+  color: var(--text-400);
   margin-bottom: 6px;
 }
 
 .contact-info-value {
   font-size: 14px;
-  color: var(--ink-700);
+  color: var(--text-700);
   line-height: 1.6;
 }
 
 .contact-info-value a {
-  color: var(--ink-700);
+  color: var(--text-700);
   transition: color var(--t-fast);
 }
 
 .contact-info-value a:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 /* Contact Form */
 .contact-form-card {
-  background: var(--white);
-  border: 1px solid var(--stone-200);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   padding: 48px;
 }
@@ -1723,7 +1739,7 @@ button {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ink-500);
+  color: var(--text-500);
 }
 
 .form-control {
@@ -1731,9 +1747,9 @@ button {
   padding: 13px 16px;
   font-family: var(--font-sans);
   font-size: 14px;
-  color: var(--ink-800);
-  background: var(--stone-50);
-  border: 1.5px solid var(--stone-200);
+  color: var(--text-800);
+  background: var(--surface-2);
+  border: 1.5px solid var(--line);
   border-radius: var(--radius-sm);
   transition: border-color var(--t-fast), background var(--t-fast);
   outline: none;
@@ -1741,12 +1757,12 @@ button {
 }
 
 .form-control::placeholder {
-  color: var(--ink-300);
+  color: var(--text-300);
 }
 
 .form-control:focus {
   border-color: var(--red);
-  background: var(--white);
+  background: var(--surface);
 }
 
 textarea.form-control {
@@ -1856,7 +1872,7 @@ textarea.form-control {
 }
 
 .footer-copy span {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .footer-legal {
@@ -2528,7 +2544,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
     right: auto;
     width: 2px;
     height: calc(100% - 52px);
-    background: var(--stone-200);
+    background: var(--line);
   }
 
   .process-step {
@@ -2700,7 +2716,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 
   .footer-links a:active,
   .contact-info-value a:active {
-    color: var(--red);
+    color: var(--red-text);
   }
 
   .nav-mobile-drawer a:active {
@@ -2752,7 +2768,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
   margin-bottom: 5px;
 }
 
@@ -2772,7 +2788,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 }
 
 #industries .section-tag {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 #industries .section-heading {
@@ -2818,7 +2834,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--red);
+  color: var(--red-text);
   transition: background var(--t), color var(--t);
 }
 
@@ -2846,7 +2862,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
    ---------------------------------------------------------- */
 #why-choose {
   padding: var(--section-py) 0;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .why-grid {
@@ -2858,8 +2874,8 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 
 .why-card {
   padding: 32px 28px;
-  background: var(--stone-50);
-  border: 1px solid var(--stone-200);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
@@ -2893,7 +2909,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   font-family: var(--font-display);
   font-size: 36px;
   font-weight: 700;
-  color: var(--stone-200);
+  color: var(--line);
   line-height: 1;
   margin-bottom: 16px;
   transition: color var(--t);
@@ -2907,14 +2923,14 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   font-family: var(--font-display);
   font-size: 17px;
   font-weight: 700;
-  color: var(--ink-900);
+  color: var(--text-900);
   margin: 0 0 10px;
 }
 
 .why-desc {
   font-size: 14px;
   line-height: 1.7;
-  color: var(--ink-500);
+  color: var(--text-500);
   margin: 0;
 }
 
@@ -2959,9 +2975,9 @@ a, button, .filter-btn, .service-card, .portfolio-item,
    ---------------------------------------------------------- */
 #problems {
   padding: var(--section-py) 0;
-  background: var(--white);
-  border-top: 1px solid var(--stone-200);
-  border-bottom: 1px solid var(--stone-200);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 #problems .section-heading {
@@ -2976,8 +2992,8 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 }
 
 .problem-card {
-  background: var(--stone-50);
-  border: 1px solid var(--stone-200);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 26px 22px;
   transition: all var(--t);
@@ -2985,7 +3001,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 }
 
 .problem-card:hover {
-  background: var(--white);
+  background: var(--surface);
   border-color: var(--red);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
@@ -2995,7 +3011,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   width: 38px;
   height: 38px;
   background: var(--red-muted);
-  color: var(--red);
+  color: var(--red-text);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -3020,7 +3036,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: 600;
-  color: var(--ink-800);
+  color: var(--text-800);
   line-height: 1.3;
   margin-bottom: 8px;
 }
@@ -3028,7 +3044,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 .problem-desc {
   font-size: 13.5px;
   line-height: 1.6;
-  color: var(--ink-500);
+  color: var(--text-500);
 }
 
 .problems-cta {
@@ -3041,7 +3057,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 
 .problems-cta-note {
   font-size: 13px;
-  color: var(--ink-400);
+  color: var(--text-400);
 }
 
 @media (max-width: 1100px) {
@@ -3058,7 +3074,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
    ---------------------------------------------------------- */
 .service-card-featured {
   border-color: var(--red);
-  background: linear-gradient(180deg, rgba(216,14,14,0.04), var(--white) 60%);
+  background: linear-gradient(180deg, rgba(216,14,14,0.04), var(--surface) 60%);
   position: relative;
 }
 
@@ -3084,11 +3100,11 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   text-align: center;
   margin-top: 36px;
   font-size: 14px;
-  color: var(--ink-500);
+  color: var(--text-500);
 }
 
 .services-footnote a {
-  color: var(--red);
+  color: var(--red-text);
   font-weight: 600;
 }
 
@@ -3102,12 +3118,12 @@ a, button, .filter-btn, .service-card, .portfolio-item,
    ---------------------------------------------------------- */
 #compare {
   padding: var(--section-py) 0;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .compare-table {
-  background: var(--white);
-  border: 1px solid var(--stone-200);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -3116,7 +3132,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 .compare-row {
   display: grid;
   grid-template-columns: 200px 1fr 1fr;
-  border-bottom: 1px solid var(--stone-200);
+  border-bottom: 1px solid var(--line);
 }
 
 .compare-row:last-child { border-bottom: none; }
@@ -3125,8 +3141,8 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   padding: 22px 24px;
   font-size: 14.5px;
   line-height: 1.6;
-  color: var(--ink-700);
-  border-right: 1px solid var(--stone-200);
+  color: var(--text-700);
+  border-right: 1px solid var(--line);
 }
 
 .compare-cell:last-child { border-right: none; }
@@ -3137,11 +3153,11 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--stone-50);
+  background: var(--surface-2);
   padding: 18px 24px;
 }
 
-.compare-header-row .compare-col-them { color: var(--ink-400); }
+.compare-header-row .compare-col-them { color: var(--text-400); }
 
 .compare-header-row .compare-col-us {
   background: var(--red);
@@ -3150,18 +3166,18 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 
 .compare-label {
   font-weight: 600;
-  color: var(--ink-800);
-  background: var(--stone-50);
+  color: var(--text-800);
+  background: var(--surface-2);
   font-size: 14px;
 }
 
 .compare-label-head {
-  background: var(--stone-50) !important;
+  background: var(--surface-2) !important;
 }
 
 .compare-us {
   background: rgba(216, 14, 14, 0.04);
-  color: var(--ink-800);
+  color: var(--text-800);
   font-weight: 500;
   position: relative;
 }
@@ -3198,7 +3214,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   }
   .compare-cell {
     border-right: none;
-    border-bottom: 1px solid var(--stone-200);
+    border-bottom: 1px solid var(--line);
     padding: 16px 20px;
     font-size: 14px;
   }
@@ -3209,8 +3225,8 @@ a, button, .filter-btn, .service-card, .portfolio-item,
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink-400);
-    background: var(--stone-50);
+    color: var(--text-400);
+    background: var(--surface-2);
     padding: 12px 20px;
   }
   .compare-us::before { display: none; }
@@ -3303,8 +3319,8 @@ a, button, .filter-btn, .service-card, .portfolio-item,
    ---------------------------------------------------------- */
 #faq {
   padding: var(--section-py) 0;
-  background: var(--white);
-  border-top: 1px solid var(--stone-200);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
 }
 
 .faq-list {
@@ -3316,15 +3332,15 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 }
 
 .faq-item {
-  background: var(--stone-50);
-  border: 1px solid var(--stone-200);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   transition: border-color var(--t), background var(--t);
 }
 
 .faq-item[open] {
-  background: var(--white);
+  background: var(--surface);
   border-color: var(--red);
   box-shadow: var(--shadow-sm);
 }
@@ -3335,7 +3351,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 600;
-  color: var(--ink-800);
+  color: var(--text-800);
   line-height: 1.4;
   position: relative;
   list-style: none;
@@ -3358,7 +3374,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   justify-content: center;
   font-size: 22px;
   font-weight: 400;
-  color: var(--red);
+  color: var(--red-text);
   background: var(--red-muted);
   border-radius: 50%;
   transition: transform var(--t), background var(--t), color var(--t);
@@ -3372,7 +3388,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 }
 
 .faq-item summary:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .faq-answer {
@@ -3382,7 +3398,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 .faq-answer p {
   font-size: 15px;
   line-height: 1.7;
-  color: var(--ink-500);
+  color: var(--text-500);
   margin: 0;
 }
 
@@ -3397,7 +3413,7 @@ a, button, .filter-btn, .service-card, .portfolio-item,
 
 .faq-cta-line {
   font-size: 15px;
-  color: var(--ink-500);
+  color: var(--text-500);
 }
 
 @media (max-width: 768px) {
@@ -3433,4 +3449,153 @@ a, button, .filter-btn, .service-card, .portfolio-item,
   display: block;
   width: 100%;
   height: 100%;
+}
+
+/* ----------------------------------------------------------
+   DARK MODE — follows the visitor's system setting
+   ---------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface:   #0F0F10;
+    --surface-2: #161618;
+    --line:      #2A2A2D;
+    --text-900:  #F5F5F5;
+    --text-800:  #EDEDED;
+    --text-700:  #D0D0D0;
+    --text-500:  #A3A3A3;
+    --text-400:  #8C8C8C;
+    --text-300:  #5F5F62;
+    --red-text:  #FF4D4D;
+    --red-muted: rgba(255, 77, 77, 0.12);
+
+    --shadow-md: 0 8px 32px rgba(0,0,0,0.45);
+    --shadow-lg: 0 24px 64px rgba(0,0,0,0.55);
+  }
+
+  /* Client logos are mostly dark marks on white; invert them so they read
+     as light marks on the dark strip. */
+  .client-logo {
+    filter: grayscale(100%) invert(1) opacity(0.55);
+  }
+  .client-logo:hover {
+    filter: grayscale(100%) invert(1) opacity(0.9);
+  }
+}
+
+/* ----------------------------------------------------------
+   SCROLL-DRIVEN MOTION (Chrome/Edge 115+, Safari 26+)
+   Browsers without support keep the IntersectionObserver reveal.
+   ---------------------------------------------------------- */
+.scroll-progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  /* Reading-progress bar along the top edge */
+  .scroll-progress {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--red);
+    transform-origin: 0 50%;
+    z-index: 1001;
+    pointer-events: none;
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+
+  @keyframes scroll-progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+}
+
+@supports (animation-timeline: view()) {
+  /* Reveal elements as they scroll into view, tied to scroll position */
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    transition: none;
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 70%;
+  }
+  .reveal-left  { animation-name: reveal-left; }
+  .reveal-right { animation-name: reveal-right; }
+
+  /* Stagger cards that enter together by offsetting their range */
+  .reveal-delay-1 { animation-range: entry 6%  entry 76%; }
+  .reveal-delay-2 { animation-range: entry 12% entry 82%; }
+  .reveal-delay-3 { animation-range: entry 18% entry 88%; }
+  .reveal-delay-4 { animation-range: entry 24% entry 94%; }
+  .reveal-delay-5 { animation-range: entry 30% entry 100%; }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes reveal-left {
+    from { opacity: 0; transform: translateX(-28px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes reveal-right {
+    from { opacity: 0; transform: translateX(28px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Hero copy drifts up and fades as it scrolls away */
+  .hero-content {
+    animation: hero-exit linear both;
+    animation-timeline: view();
+    animation-range: exit 0% exit 90%;
+  }
+
+  @keyframes hero-exit {
+    to { opacity: 0; transform: translateY(-48px) scale(0.98); }
+  }
+}
+
+/* ----------------------------------------------------------
+   VIEW TRANSITIONS — portfolio filter
+   ---------------------------------------------------------- */
+::view-transition-group(*) {
+  animation-duration: 380ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ----------------------------------------------------------
+   REDUCED MOTION — respect the visitor's OS setting
+   ---------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+
+  .reveal, .reveal-left, .reveal-right,
+  .hero-content {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .scroll-progress {
+    animation: none;
+    display: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }
