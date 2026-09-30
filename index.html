@@ -449,9 +449,7 @@
   <!-- Background video via YTPlayer -->
   <div id="hero-video-bg">
     <div class="player"
-      data-property="{videoURL:'https://www.youtube.com/watch?v=W_G-nfwMnXE',
-      containment:'#hero', startAt:0, mute:true, autoPlay:true,
-      showControls:false, opacity:1, optimizeDisplay:true, vol:0}">
+      data-property='{"videoURL":"https://www.youtube.com/watch?v=W_G-nfwMnXE","containment":"#hero","startAt":0,"mute":true,"autoPlay":true,"showControls":false,"opacity":1,"optimizeDisplay":true,"vol":0}'>
     </div>
   </div>
 
@@ -1178,97 +1176,129 @@
     <ul class="portfolio-grid" id="portfolioGrid">
 
       <li class="portfolio-item illustration web">
-        <img src="img/portfolio/olivanders.png" alt="Olivanders Beauty Touch ERP system built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        <picture>
+          <source srcset="img/portfolio/olivanders.avif" type="image/avif">
+          <source srcset="img/portfolio/olivanders.webp" type="image/webp">
+          <img src="img/portfolio/olivanders.png" alt="Olivanders Beauty Touch ERP system built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        </picture>
         <div class="portfolio-overlay">
           <div class="portfolio-category">ERP for Beauty Retail</div>
           <div class="portfolio-title">Olivanders Beauty Touch</div>
           <div class="portfolio-meta">Manual operations slowing fulfilment &rarr; custom ERP + ongoing IT support &rarr; 3-year partnership, faster order-to-delivery, single source of truth across branches.</div>
         </div>
-        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/olivanders.png" title="Olivanders ERP System" aria-label="View Olivanders project">
+        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/olivanders.webp" title="Olivanders ERP System" aria-label="View Olivanders project">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
         </a>
       </li>
 
       <li class="portfolio-item digital_art illustration">
-        <img src="img/portfolio/acuvic.png" alt="Acuvic crypto trading platform developed by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        <picture>
+          <source srcset="img/portfolio/acuvic.avif" type="image/avif">
+          <source srcset="img/portfolio/acuvic.webp" type="image/webp">
+          <img src="img/portfolio/acuvic.png" alt="Acuvic crypto trading platform developed by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        </picture>
         <div class="portfolio-overlay">
           <div class="portfolio-category">Fintech Trading Platform</div>
           <div class="portfolio-title">Acuvic Crypto Software</div>
           <div class="portfolio-meta">Fintech startup needed an institution-grade crypto trading platform &rarr; multi-tenant architecture, real-time settlement, hardened security model &rarr; live production deployment.</div>
         </div>
-        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/acuvic.png" title="Acuvic Crypto Software" aria-label="View Acuvic project">
+        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/acuvic.webp" title="Acuvic Crypto Software" aria-label="View Acuvic project">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
         </a>
       </li>
 
       <li class="portfolio-item graphic_design digital_art">
-        <img src="img/portfolio/hyre.png" alt="Hyre recruitment management platform built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        <picture>
+          <source srcset="img/portfolio/hyre.avif" type="image/avif">
+          <source srcset="img/portfolio/hyre.webp" type="image/webp">
+          <img src="img/portfolio/hyre.png" alt="Hyre recruitment management platform built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        </picture>
         <div class="portfolio-overlay">
           <div class="portfolio-category">Recruitment SaaS</div>
           <div class="portfolio-title">Hyre Management Platform</div>
           <div class="portfolio-meta">Recruitment workflows scattered across spreadsheets and email &rarr; unified candidate management with pipeline tracking &rarr; replaced 4 tools with one system.</div>
         </div>
-        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/hyre.png" title="Hyre Management Platform" aria-label="View Hyre project">
+        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/hyre.webp" title="Hyre Management Platform" aria-label="View Hyre project">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
         </a>
       </li>
 
       <li class="portfolio-item illustration graphic_design">
-        <img src="img/portfolio/yoga.png" alt="Yoga cybersecurity operations portal built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        <picture>
+          <source srcset="img/portfolio/yoga.avif" type="image/avif">
+          <source srcset="img/portfolio/yoga.webp" type="image/webp">
+          <img src="img/portfolio/yoga.png" alt="Yoga cybersecurity operations portal built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        </picture>
         <div class="portfolio-overlay">
           <div class="portfolio-category">Cybersecurity Operations</div>
           <div class="portfolio-title">Yoga Security Portal</div>
           <div class="portfolio-meta">Security firm needed a customer-facing operations portal &rarr; real-time threat dashboards and incident workflows &rarr; clients get visibility instead of monthly PDF reports.</div>
         </div>
-        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/yoga.png" title="Yoga Security Portal" aria-label="View Yoga project">
+        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/yoga.webp" title="Yoga Security Portal" aria-label="View Yoga project">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
         </a>
       </li>
 
       <li class="portfolio-item web illustration">
-        <img src="img/portfolio/eventer.png" alt="Eventer event management platform developed by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        <picture>
+          <source srcset="img/portfolio/eventer.avif" type="image/avif">
+          <source srcset="img/portfolio/eventer.webp" type="image/webp">
+          <img src="img/portfolio/eventer.png" alt="Eventer event management platform developed by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        </picture>
         <div class="portfolio-overlay">
           <div class="portfolio-category">Event Management</div>
           <div class="portfolio-title">Eventer Digital Platform</div>
           <div class="portfolio-meta">Events business juggling vendors, attendees, and bookings manually &rarr; end-to-end event platform with payments and ticketing &rarr; same team now runs 3&times; the event volume.</div>
         </div>
-        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/eventer.png" title="Eventer Digital Platform" aria-label="View Eventer project">
+        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/eventer.webp" title="Eventer Digital Platform" aria-label="View Eventer project">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
         </a>
       </li>
 
       <li class="portfolio-item digital_art web">
-        <img src="img/portfolio/xsmart.png" alt="XSmart business analytics platform built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        <picture>
+          <source srcset="img/portfolio/xsmart.avif" type="image/avif">
+          <source srcset="img/portfolio/xsmart.webp" type="image/webp">
+          <img src="img/portfolio/xsmart.png" alt="XSmart business analytics platform built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        </picture>
         <div class="portfolio-overlay">
           <div class="portfolio-category">Business Analytics</div>
           <div class="portfolio-title">XSmart Analytics Platform</div>
           <div class="portfolio-meta">Reporting was a monthly fire drill in Excel &rarr; live dashboards pulling from operational systems &rarr; leadership now sees the business in real time, not weeks late.</div>
         </div>
-        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/xsmart.png" title="XSmart Analytics Platform" aria-label="View XSmart project">
+        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/xsmart.webp" title="XSmart Analytics Platform" aria-label="View XSmart project">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
         </a>
       </li>
 
       <li class="portfolio-item graphic_design digital_art">
-        <img src="img/portfolio/sassio.png" alt="Sassio multi-branch ERP system built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        <picture>
+          <source srcset="img/portfolio/sassio.avif" type="image/avif">
+          <source srcset="img/portfolio/sassio.webp" type="image/webp">
+          <img src="img/portfolio/sassio.png" alt="Sassio multi-branch ERP system built by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        </picture>
         <div class="portfolio-overlay">
           <div class="portfolio-category">Multi-Branch ERP</div>
           <div class="portfolio-title">Sassio Enterprise System</div>
           <div class="portfolio-meta">Multi-branch operation with disconnected finance, ops, and reporting &rarr; unified ERP linking every branch &rarr; one source of truth, branch-level P&amp;L on demand.</div>
         </div>
-        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/sassio.png" title="Sassio Enterprise System" aria-label="View Sassio project">
+        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/sassio.webp" title="Sassio Enterprise System" aria-label="View Sassio project">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
         </a>
       </li>
 
       <li class="portfolio-item web graphic_design">
-        <img src="img/portfolio/it-source.png" alt="IT Source internal CRM and project management system by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        <picture>
+          <source srcset="img/portfolio/it-source.avif" type="image/avif">
+          <source srcset="img/portfolio/it-source.webp" type="image/webp">
+          <img src="img/portfolio/it-source.png" alt="IT Source internal CRM and project management system by Vodatrox" loading="lazy" decoding="async" width="800" height="600">
+        </picture>
         <div class="portfolio-overlay">
           <div class="portfolio-category">Internal Ops CRM</div>
           <div class="portfolio-title">IT Source Management</div>
           <div class="portfolio-meta">IT services firm running clients out of spreadsheets &rarr; internal CRM + project tracker with SLA dashboards &rarr; ticket triage time cut, billing tied to actual work.</div>
         </div>
-        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/it-source.png" title="IT Source Management" aria-label="View IT Source project">
+        <a class="portfolio-zoom prettyPhoto" href="img/portfolio/gallery_2x/it-source.webp" title="IT Source Management" aria-label="View IT Source project">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
         </a>
       </li>
@@ -1296,7 +1326,11 @@
       <!-- Kennedy -->
       <div class="team-card reveal reveal-delay-1">
         <div class="team-photo">
-          <img src="img/thumbs/kennedy-image.jpeg" alt="Eziechina Kennedy, CEO and Lead Engineer at Vodatrox" loading="lazy" decoding="async" width="400" height="500">
+          <picture>
+            <source srcset="img/thumbs/kennedy-image.avif" type="image/avif">
+            <source srcset="img/thumbs/kennedy-image.webp" type="image/webp">
+            <img src="img/thumbs/kennedy-image.jpeg" alt="Eziechina Kennedy, CEO and Lead Engineer at Vodatrox" loading="lazy" decoding="async" width="400" height="500">
+          </picture>
           <div class="team-socials-overlay">
             <a href="#" class="team-social-link" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396V21.5z"/></svg></a>
             <a href="#" class="team-social-link" aria-label="Twitter"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
@@ -1314,7 +1348,11 @@
       <!-- MaryAnn -->
       <div class="team-card reveal reveal-delay-2">
         <div class="team-photo">
-          <img src="img/thumbs/maryann-image.png" alt="Mankilik MaryAnn, Head of Client Experience at Vodatrox" loading="lazy" decoding="async" width="400" height="500">
+          <picture>
+            <source srcset="img/thumbs/maryann-image.avif" type="image/avif">
+            <source srcset="img/thumbs/maryann-image.webp" type="image/webp">
+            <img src="img/thumbs/maryann-image.png" alt="Mankilik MaryAnn, Head of Client Experience at Vodatrox" loading="lazy" decoding="async" width="400" height="500">
+          </picture>
           <div class="team-socials-overlay">
             <a href="#" class="team-social-link" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396V21.5z"/></svg></a>
             <a href="#" class="team-social-link" aria-label="Twitter"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
@@ -1332,7 +1370,11 @@
       <!-- Tope -->
       <div class="team-card reveal reveal-delay-3">
         <div class="team-photo">
-          <img src="img/thumbs/tope-image.png" alt="Temitope Joseph, Head of Operations at Vodatrox" loading="lazy" decoding="async" width="400" height="500">
+          <picture>
+            <source srcset="img/thumbs/tope-image.avif" type="image/avif">
+            <source srcset="img/thumbs/tope-image.webp" type="image/webp">
+            <img src="img/thumbs/tope-image.png" alt="Temitope Joseph, Head of Operations at Vodatrox" loading="lazy" decoding="async" width="400" height="500">
+          </picture>
           <div class="team-socials-overlay">
             <a href="#" class="team-social-link" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396V21.5z"/></svg></a>
             <a href="#" class="team-social-link" aria-label="Twitter"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
@@ -1350,7 +1392,11 @@
       <!-- Chidiebere -->
       <div class="team-card reveal reveal-delay-4">
         <div class="team-photo">
-          <img src="img/thumbs/chidiebere-image.png" alt="Eze Chidiebere, Director of Digital Transformation at Vodatrox" loading="lazy" decoding="async" width="400" height="500">
+          <picture>
+            <source srcset="img/thumbs/chidiebere-image.avif" type="image/avif">
+            <source srcset="img/thumbs/chidiebere-image.webp" type="image/webp">
+            <img src="img/thumbs/chidiebere-image.png" alt="Eze Chidiebere, Director of Digital Transformation at Vodatrox" loading="lazy" decoding="async" width="400" height="500">
+          </picture>
           <div class="team-socials-overlay">
             <a href="#" class="team-social-link" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396V21.5z"/></svg></a>
             <a href="#" class="team-social-link" aria-label="Twitter"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
